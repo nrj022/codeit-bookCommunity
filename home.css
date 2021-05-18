@@ -1,9 +1,4 @@
-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  /* margin-bottom: 30px; */
-}
+@import "common-attri.css";
 
 a {
   text-decoration: none;
@@ -14,12 +9,6 @@ a {
 .login:hover {
   text-decoration: underline;
 }
-
-header h1 {
-  display: flex;
-  margin: 20px 30px;
-}
-
 header .login {
   color: rgb(172, 172, 172);
   margin-right: 30px;

@@ -1,0 +1,30 @@
+@import "common-attri.css";
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  margin-top: 100px;
+}
+
+/*form {
+    position: absolute;
+    top: 300px;
+    left: 700px;
+    width: 400px;
+  }*/
