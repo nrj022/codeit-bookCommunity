@@ -10,30 +10,29 @@ html = urlopen(url).read()
 soup = BeautifulSoup(html, 'html.parser')
 
 book = soup.select('.ss_book_box')
-bookList = []
+title = []
+author = []
+cover = []
 
 cnt = 0
 for i in book:
     cnt += 1
     if cnt <= 8:    # 베스트셀러 8위까지
-        # 제목, 지은이 (csv)
-        temp = []
-        temp.append(i.select_one('.bo3').b.text)
-        temp.append(i.select_one(
+        title.append(i.select_one('.bo3').b.text)
+        author.append(i.select_one(
             '.bo3').parent.next_sibling.next_sibling.a.string)
-        bookList.append(temp)
 
-        # 표지 (jpg)
-        imgUrl = i.select_one('.i_cover')['src']
-        with urlopen(imgUrl) as c:
-            with open('aladin_' + str(cnt) + '.jpg', 'wb') as h:
-                img = c.read()
-                h.write(img)
+        try:
+            cover.append(i.select_one('.i_cover')['src'])
+        except TypeError:
+            cover.append('')
+        # with urlopen(imgUrl) as c:
+        #     with open('aladin_' + str(cnt) + '.jpg', 'wb') as h:
+        #         img = c.read()
+        #         h.write(img)
 
-f = open(f'aladin.csv', 'w', encoding='utf-8', newline='')
-csvWriter = csv.writer(f)
-for i in bookList:
-    csvWriter.writerow(i)
-f.close()
-
-print('완료')
+# f = open(f'aladin.csv', 'w', encoding='utf-8', newline='')
+# csvWriter = csv.writer(f)
+# for i in bookList:
+#     csvWriter.writerow(i)
+# f.close()
