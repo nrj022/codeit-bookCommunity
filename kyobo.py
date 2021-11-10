@@ -9,7 +9,9 @@ headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit
 
 coverSource = []
 title = []
+info = []
 author = []
+detailLink = []
 
 url = 'http://www.kyobobook.co.kr/bestSellerNew/bestseller.laf?orderClick=d79'
 
@@ -26,26 +28,18 @@ while bestSellerUl.find("ul", class_="list_author") != None:
 
 bestSellerLi = bestSellerUl.find_all("li")[0:8]
 
-for  li in bestSellerLi:
+for li in bestSellerLi:
     coverSource.append(li.img["src"])
     title.append(li.find("div", class_="title").strong.text)
-    """ authorDiv = li.find("div", class_="author")
-    while authorDiv.find("span") != None:
-        authorDiv.find("span").replace_with('') """
-    """ print(li.text) """
+    detailLink.append(li.find("div", class_="cover").a["href"])
+    info.append(li.find("div", class_="author").text)
 
-''' with open("sampleHtml.html", "r+") as f:
-    data = f.read()
-    soupHomePage = BeautifulSoup(data, "html.parser")
-    li = soupHomePage.select_one("li")
-    print(li)
-    content = '<a href="#">Link</a>'
-    li.append(BeautifulSoup(content, 'html.parser'))
-    print(li)
-    print(soupHomePage) '''
-
-
-
-
-''' with open("sampleHtml.html", "w", encoding="utf8") as file:
-    file.write() '''
+for i in info:
+    i = i.replace("\n", "")
+    i = i.replace("\r", "")
+    i = i.replace("\t", "")
+    i = i.replace(" ", "")
+    if(i.find("저자더보기") != -1):
+        i = i.replace("저자더보기", " 외")
+    i = i[0:i.find('|')]
+    author.append(i)

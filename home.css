@@ -1,4 +1,10 @@
 @import "common-attri.css";
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap");
+
+body {
+  color: #b6d7a8;
+  font-family: "Nanum Myeongjo", serif;
+}
 
 .best-seller__book--link a:hover,
 .login:hover {
@@ -41,7 +47,7 @@ header .login i {
   border-bottom: 1.5px solid black;
 }
 
-.comprehensive-btn {
+.kyobo-btn {
   font-weight: 700;
 }
 
