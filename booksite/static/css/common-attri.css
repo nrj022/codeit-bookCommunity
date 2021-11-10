@@ -1,0 +1,16 @@
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* margin-bottom: 30px; */
+}
+
+header h1 {
+  display: flex;
+  margin: 20px 30px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
