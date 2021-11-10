@@ -5,6 +5,3 @@ from .kyobo import bookInfo
 
 def home(request):
     return render(request, 'pybo/home.html', {"bookInfo":bookInfo})
-
-def chatRoom(request):
-    return render(request, 'pybo/chat-room.html')
