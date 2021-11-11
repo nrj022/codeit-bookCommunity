@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('pybo/', include('pybo.urls')),
     path('common/', include('common.urls')),
-    path('chat/', include('chat.urls')),
+    #path('chat/', include('chat.urls')),
+    path('kyobo/<int:id>/', views.kyoboDetail),
     path('', views.home, name='home'),
 ]

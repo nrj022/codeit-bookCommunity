@@ -7,16 +7,16 @@
 </div>
 <div class="book-list">
   <div class="best-seller kyobo">
-    {% for info in bookInfo %}
+    {% for book in books %}
     <div class="best-seller__book">
-      <span class="ranking first-rank">{{info.0}}</span>
-      <img src="{{info.1}}" />
+      <span class="ranking first-rank">{{book.rank}}</span>
+      <img src="{{book.cover}}" />
       <div class="best-seller__book--detail">
-        <h3>{{info.2}}</h3>
-        <span>{{info.3}}</span>
+        <h3>{{book.title}}</h3>
+        <span>{{book.author}}</span>
       </div>
       <div class="best-seller__book--link">
-        <a href="chat-room.html"
+        <a href="/kyobo/{{book.id}}/"
           >Go Chat <i class="fas fa-arrow-right"></i
         ></a>
       </div>

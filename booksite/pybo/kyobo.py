@@ -45,9 +45,24 @@ for i in info:
     i = i[0:index]
     author.append(i)
 
-bookInfo = [[], [], [], [], [], [], [], []]
+books = []
+
+class BookInfo:
+    def __init__(self, i, c, t, au):
+        self.id = i
+        self.rank = i+1
+        self.cover = c
+        self.title = t
+        self.author = au
+
 for i in range(8):
+    book = BookInfo(i, coverSource[i], title[i], author[i])
+    books.append(book)
+   
+        
+"""for i in range(8):
+    bookInfo[i].append(i)
     bookInfo[i].append(str(i+1))
     bookInfo[i].append(coverSource[i])
     bookInfo[i].append(title[i])
-    bookInfo[i].append(author[i])
+    bookInfo[i].append(author[i])"""
